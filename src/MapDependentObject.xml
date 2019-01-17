@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="user1" class="com.spring.mapdependentobject.User">
+	<constructor-arg value="1001"></constructor-arg>
+	<constructor-arg value="Aaqib"></constructor-arg>
+	<constructor-arg value="aaqib@gmail.com"></constructor-arg>
+</bean>
+<bean id="user2" class="com.spring.mapdependentobject.User">
+	<constructor-arg value="1002"></constructor-arg>
+	<constructor-arg value="Azar"></constructor-arg>
+	<constructor-arg value="azar@gmail.com"></constructor-arg>
+</bean>
+<bean id="answer1" class="com.spring.mapdependentobject.Answer">
+	<constructor-arg value="100"></constructor-arg>
+	<constructor-arg value="Java is Popular language"></constructor-arg>
+	<constructor-arg value="10/08/2018"></constructor-arg>
+</bean>
+
+<bean id="answer2" class="com.spring.mapdependentobject.Answer">
+	<constructor-arg value="099"></constructor-arg>
+	<constructor-arg value="Java is Platform"></constructor-arg>
+	<constructor-arg value="10/08/2018"></constructor-arg>
+</bean>
+<bean id="ans5" class="com.spring.mapdependentobject.Question">
+	<constructor-arg value="102030"></constructor-arg>
+	<constructor-arg value="What is Java"></constructor-arg>
+	<constructor-arg>
+		<map>
+			<entry key-ref="answer1" value-ref="user1"></entry>
+			<entry key-ref="answer2" value-ref="user2"></entry>
+		</map>
+	</constructor-arg>
+</bean>
+
+</beans> 
